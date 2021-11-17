@@ -1,0 +1,23 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="patients.models.Patient.*" />
+          <option value="scans.models.Scan.objects" />
+          <option value="scans.models.SZ.objects" />
+          <option value="patients.models.PreQuadrant.*" />
+          <option value="notifications.models.Notification.*" />
+          <option value="notifications.models.Alarm.*" />
+          <option value="patients.models.City.*" />
+          <option value="patients.models.Reference.*" />
+          <option value="patients.models.FormC.*" />
+          <option value="patients.models.Quadrant.*" />
+          <option value="users.models.JobSide.*" />
+          <option value="patients.models.Comment.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
