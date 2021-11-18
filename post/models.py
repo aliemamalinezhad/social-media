@@ -31,10 +31,7 @@ class Post(general_model):
         null=True,
         blank=True
     )
-    tag = models.ManyToManyField(
-        'tag.Tag',
-        verbose_name=_('Tag')
-    )
+
     like = models.ManyToManyField(
         User,
         verbose_name=_('Like'),
@@ -44,19 +41,7 @@ class Post(general_model):
         User,
         verbose_name=_('Feed')
     )
-    reshare = models.ForeignKey(
-        'post.Post',
-        verbose_name=_('Feed'),
-        on_delete=models.CASCADE,
-        related_name='reshares',
-        null=True,
-        blank=True,
-        default=None
-    )
-    reshare_count = models.PositiveIntegerField(
-        verbose_name=_('Total Reshare'),
-        default=0,
-    )
+
     comment_count = models.PositiveIntegerField(
         verbose_name=_('Total Comment'),
         default=0,
