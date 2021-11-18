@@ -15,10 +15,22 @@ def get_file_path(instance, filename):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    email = models.EmailField(_('email address'), unique=True)
-    is_staff = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=True)
-    date_joined = models.DateTimeField(default=timezone.now)
+    email = models.EmailField(
+        verbose_name=_('email address'),
+        unique=True
+    )
+    is_staff = models.BooleanField(
+        verbose_name=_('is_staff'),
+        default=False
+    )
+    is_active = models.BooleanField(
+        verbose_name=_('is_active'),
+        default=True
+    )
+    date_joined = models.DateTimeField(
+        verbose_name=_('Create Date'),
+        default=timezone.now
+    )
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
