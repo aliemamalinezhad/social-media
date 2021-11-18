@@ -14,11 +14,22 @@ def get_file_path(instance, filename):
     return os.path.join(f'user/{instance.user.id}', filename)
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
 class Post(GeneralModel):
     user = models.ForeignKey(
         User,
         verbose_name=_('Author'),
         on_delete=models.CASCADE,
+        related_name='posts'
+    )
+    category = models.ManyToManyField(
+        Category,
         related_name='posts'
     )
     caption = models.TextField(
@@ -53,4 +64,3 @@ class Post(GeneralModel):
 
     def __str__(self):
         return f'{self.user} {self.caption[:10]}'
-
