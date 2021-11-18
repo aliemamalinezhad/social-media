@@ -40,7 +40,13 @@ INSTALLED_APPS = [
 
     # Internal Apps
     'blog',
+    'user',
+
+    # External Apps
+    'rest_framework',
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -72,6 +78,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'social_proj.wsgi.application'
 
+AUTH_USER_MODEL = 'user.User'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
