@@ -2,7 +2,7 @@ import os
 import uuid
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext as _
-from utils import general_model
+from utils import GeneralModel
 from django.db import models
 
 User = get_user_model()
@@ -14,7 +14,7 @@ def get_file_path(instance, filename):
     return os.path.join(f'user/{instance.user.id}', filename)
 
 
-class Post(general_model):
+class Post(GeneralModel):
     user = models.ForeignKey(
         User,
         verbose_name=_('Author'),
