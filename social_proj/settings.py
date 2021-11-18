@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Internal Apps
-    'blog',
+    'post',
     'user',
 
     # External Apps
