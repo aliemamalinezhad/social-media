@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # Internal Apps
     'post',
     'user',
+    'image',
 
     # External Apps
     'rest_framework',
