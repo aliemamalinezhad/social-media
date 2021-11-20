@@ -16,3 +16,4 @@ class UserSerializer(serializers.ModelSerializer):
 
     def get_days_since_joined(self, obj):
         return (now() - obj.date_joined).days
+
