@@ -10,8 +10,11 @@ class Image(GeneralModel):
     name = models.CharField(
         verbose_name=_('Name'),
         max_length=255,
+    )
+    image = VersatileImageField(
+        'Image',
         upload_to='images/',
-        ppoi_field='image_ppoi'
+        ppoi_field='image_ppoi',
     )
     image_ppoi = PPOIField()
 
