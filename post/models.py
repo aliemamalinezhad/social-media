@@ -62,5 +62,11 @@ class Post(GeneralModel):
         default=0,
     )
 
+    image = models.ManyToManyField(
+        'image.Image',
+        verbose_name=_('Post Images'),
+        related_name='posts',
+    )
+
     def __str__(self):
         return f'{self.user} {self.caption[:10]}'
