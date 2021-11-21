@@ -1,5 +1,6 @@
 from .models import Post, Category
 from rest_framework import serializers
+from image.serializers import ImageSerializer
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -10,10 +11,11 @@ class CategorySerializer(serializers.ModelSerializer):
 
 class PostSerializer(serializers.ModelSerializer):
     category = CategorySerializer(many=True)
+    image = ImageSerializer(many=True)
 
     class Meta:
         model = Post
-        fields = ['pk', 'user', 'category', 'caption']
+        fields = ['pk', 'user','caption', 'category', 'image']
 
     def create(self, validated_data):
         categories_data = validated_data.pop('category', None)
